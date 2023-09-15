@@ -24,6 +24,10 @@
 		FBB579BA2AB4F1F200B83AE2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579B92AB4F1F200B83AE2 /* LoginController.swift */; };
 		FBB579BE2AB509A400B83AE2 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579BD2AB509A400B83AE2 /* AuthButton.swift */; };
 		FBB579C02AB50B5E00B83AE2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579BF2AB50B5E00B83AE2 /* CustomTextField.swift */; };
+		FBB579C32AB514DE00B83AE2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579C22AB514DE00B83AE2 /* AuthService.swift */; };
+		FBB579C52AB5154800B83AE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579C42AB5154800B83AE2 /* LoginViewModel.swift */; };
+		FBB579C72AB519A000B83AE2 /* CheckLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579C62AB519A000B83AE2 /* CheckLoginModel.swift */; };
+		FBB579C92AB51D6000B83AE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579C82AB51D6000B83AE2 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		FBB579B92AB4F1F200B83AE2 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FBB579BD2AB509A400B83AE2 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		FBB579BF2AB50B5E00B83AE2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		FBB579C22AB514DE00B83AE2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FBB579C42AB5154800B83AE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FBB579C62AB519A000B83AE2 /* CheckLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLoginModel.swift; sourceTree = "<group>"; };
+		FBB579C82AB51D6000B83AE2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FD14C593AC13424CBD0F6C7B /* Pods-UltimateSolutionsTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltimateSolutionsTask.debug.xcconfig"; path = "Target Support Files/Pods-UltimateSolutionsTask/Pods-UltimateSolutionsTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +161,7 @@
 				FBB579B12AB4ED1600B83AE2 /* View */,
 				FBB579B02AB4ED0D00B83AE2 /* ViewModel */,
 				FBB579AF2AB4ED0400B83AE2 /* Model */,
+				FBB579C12AB514BB00B83AE2 /* API */,
 				FBB579B32AB4ED2300B83AE2 /* Utils */,
 				FBB5797D2AB4E4D700B83AE2 /* AppDelegate.swift */,
 				FBB5797F2AB4E4D700B83AE2 /* SceneDelegate.swift */,
@@ -184,6 +193,7 @@
 		FBB579AF2AB4ED0400B83AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FBB579C62AB519A000B83AE2 /* CheckLoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +201,7 @@
 		FBB579B02AB4ED0D00B83AE2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FBB579C42AB5154800B83AE2 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 				FBB579B72AB4EF3900B83AE2 /* Extension.swift */,
 				FBB579AD2AB4EC2400B83AE2 /* launch-.png */,
 				FBB579BF2AB50B5E00B83AE2 /* CustomTextField.swift */,
+				FBB579C82AB51D6000B83AE2 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -228,6 +240,14 @@
 				FBB579B52AB4EE6600B83AE2 /* CircleView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		FBB579C12AB514BB00B83AE2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FBB579C22AB514DE00B83AE2 /* AuthService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,11 +492,15 @@
 				FBB579BE2AB509A400B83AE2 /* AuthButton.swift in Sources */,
 				FBB579B82AB4EF3900B83AE2 /* Extension.swift in Sources */,
 				FBB579BA2AB4F1F200B83AE2 /* LoginController.swift in Sources */,
+				FBB579C32AB514DE00B83AE2 /* AuthService.swift in Sources */,
+				FBB579C72AB519A000B83AE2 /* CheckLoginModel.swift in Sources */,
 				FBB579B62AB4EE6600B83AE2 /* CircleView.swift in Sources */,
 				FBB579822AB4E4D700B83AE2 /* ViewController.swift in Sources */,
 				FBB5797E2AB4E4D700B83AE2 /* AppDelegate.swift in Sources */,
 				FBB579802AB4E4D700B83AE2 /* SceneDelegate.swift in Sources */,
+				FBB579C52AB5154800B83AE2 /* LoginViewModel.swift in Sources */,
 				FBB579C02AB50B5E00B83AE2 /* CustomTextField.swift in Sources */,
+				FBB579C92AB51D6000B83AE2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,8 @@ class LoginController : UIViewController {
     
     //MARK: - Properties
     
+    var viewModel = LoginViewModel()
+    
     let circleView = CircleView()
     
     let brandView : UIImageView = {
@@ -59,7 +61,6 @@ class LoginController : UIViewController {
     private lazy var loginButton : AuthButton = {
        
         let button = AuthButton(title: "Log In",type: .system)
-        button.isEnabled = false
         button.addTarget(self, action: #selector(handleLoginUser), for: .touchUpInside)
         return button
     }()
@@ -84,6 +85,23 @@ class LoginController : UIViewController {
     //MARK: - Actions
     
     @objc func handleLoginUser(){
+        
+        viewModel.loginUser(userID: userIDTextField.text!, password: passwordTextField.text!) { result in
+            
+            switch result {
+            case .success(let response):
+                if let response = response {
+                    if response.Result.ErrNo == 0 {
+                        self.showMessage(withTitle: "", message: "SUCCESS") // Go Main Screen
+                    }else{
+                        self.showMessage(withTitle: "Error", message: response.Result.ErrMsg)
+                    }
+                }
+            case .failure(let error):
+                self.showMessage(withTitle: "Error", message: error.localizedDescription) // This can be delete
+            }
+            
+        }
         
     }
     
