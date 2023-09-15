@@ -1,0 +1,6 @@
+framework module Pods_UltimateSolutionsTaskTests {
+  umbrella header "Pods-UltimateSolutionsTaskTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
