@@ -86,23 +86,28 @@ class LoginController : UIViewController {
     
     @objc func handleLoginUser(){
         
-        viewModel.loginUser(userID: userIDTextField.text!, password: passwordTextField.text!) { result in
-            
-            switch result {
-            case .success(let response):
-                if let response = response {
-                    if response.Result.ErrNo == 0 {
-                        self.showMessage(withTitle: "", message: "SUCCESS") // Go Main Screen
-                    }else{
-                        self.showMessage(withTitle: "Error", message: response.Result.ErrMsg)
-                    }
-                }
-            case .failure(let error):
-                self.showMessage(withTitle: "Error", message: error.localizedDescription) // This can be delete
-            }
-            
-        }
+        guard let userId = userIDTextField.text else{return}
+        guard let password = passwordTextField.text else{return}
         
+        viewModel.loginUser(userID: userId, password: password,languageCode: "2") { response in
+            
+            if let response = response {
+                
+                if response.Result.ErrNo == 0 {
+                    
+                    UserDefaultsService.saveUserId(P_DLVRY_NO: userId)
+                    UserDefaultsService.saveLanguageCode(P_LANG_NO: "2")
+                    
+                    let controller = MainController()
+                    let nav = UINavigationController(rootViewController: controller)
+                    nav.modalPresentationStyle = .fullScreen
+                    self.present(nav, animated: true)
+                }
+                else{
+                    self.showMessage(withTitle: "ERROR", message: response.Result.ErrMsg )
+                }
+            }
+        }
     }
     
     @objc func handleRecognizer(){

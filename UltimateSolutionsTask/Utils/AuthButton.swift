@@ -15,7 +15,7 @@ class AuthButton : UIButton {
          
          layer.cornerRadius = 20
          setTitle(title, for: .normal)
-        backgroundColor = UIColor(red: 32/255.0, green: 78/255.0, blue: 96/255.0, alpha: 1)
+        backgroundColor = Constants.Colors.darkBlueColor
     }
     
     required init?(coder: NSCoder) {

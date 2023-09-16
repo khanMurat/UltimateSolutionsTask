@@ -1,20 +1,26 @@
 PODS:
   - Alamofire (5.6.4)
   - JGProgressHUD (2.2)
+  - SQLite.swift (0.14.1):
+    - SQLite.swift/standard (= 0.14.1)
+  - SQLite.swift/standard (0.14.1)
 
 DEPENDENCIES:
   - Alamofire
   - JGProgressHUD
+  - SQLite.swift (~> 0.14.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - JGProgressHUD
+    - SQLite.swift
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  SQLite.swift: 2992550ebf3c5b268bf4352603e3df87d2a4ed72
 
-PODFILE CHECKSUM: 87ac931a21cee23c837710a1b051502180d69934
+PODFILE CHECKSUM: 08366947cb2bd6d79ffffeda609d2bbe3d7cd173
 
 COCOAPODS: 1.11.3

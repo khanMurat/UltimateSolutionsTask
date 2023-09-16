@@ -28,6 +28,17 @@
 		FBB579C52AB5154800B83AE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579C42AB5154800B83AE2 /* LoginViewModel.swift */; };
 		FBB579C72AB519A000B83AE2 /* CheckLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579C62AB519A000B83AE2 /* CheckLoginModel.swift */; };
 		FBB579C92AB51D6000B83AE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB579C82AB51D6000B83AE2 /* Constants.swift */; };
+		FBC4BC272AB5C80500635FBE /* DeliveryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC262AB5C80500635FBE /* DeliveryItems.swift */; };
+		FBC4BC292AB5C92800635FBE /* DeliveryStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC282AB5C92800635FBE /* DeliveryStatus.swift */; };
+		FBC4BC2B2AB5CD4D00635FBE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC2A2AB5CD4D00635FBE /* MainController.swift */; };
+		FBC4BC2D2AB5CD5B00635FBE /* NewDeliveryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC2C2AB5CD5B00635FBE /* NewDeliveryController.swift */; };
+		FBC4BC2F2AB5CD6400635FBE /* OtherDeliveryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC2E2AB5CD6400635FBE /* OtherDeliveryController.swift */; };
+		FBC4BC312AB5DDE400635FBE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC302AB5DDE400635FBE /* UserDefaults.swift */; };
+		FBC4BC332AB5EF5A00635FBE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC322AB5EF5A00635FBE /* Service.swift */; };
+		FBC4BC352AB5F59B00635FBE /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC342AB5F59B00635FBE /* MainViewModel.swift */; };
+		FBC4BC372AB636DE00635FBE /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC362AB636DE00635FBE /* DatabaseService.swift */; };
+		FBC4BC392AB64C0100635FBE /* DeliveryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC382AB64C0100635FBE /* DeliveryItem.swift */; };
+		FBC4BC3B2AB64FF700635FBE /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC3A2AB64FF700635FBE /* MainTopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +89,17 @@
 		FBB579C42AB5154800B83AE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FBB579C62AB519A000B83AE2 /* CheckLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLoginModel.swift; sourceTree = "<group>"; };
 		FBB579C82AB51D6000B83AE2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FBC4BC262AB5C80500635FBE /* DeliveryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItems.swift; sourceTree = "<group>"; };
+		FBC4BC282AB5C92800635FBE /* DeliveryStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryStatus.swift; sourceTree = "<group>"; };
+		FBC4BC2A2AB5CD4D00635FBE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		FBC4BC2C2AB5CD5B00635FBE /* NewDeliveryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeliveryController.swift; sourceTree = "<group>"; };
+		FBC4BC2E2AB5CD6400635FBE /* OtherDeliveryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDeliveryController.swift; sourceTree = "<group>"; };
+		FBC4BC302AB5DDE400635FBE /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		FBC4BC322AB5EF5A00635FBE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		FBC4BC342AB5F59B00635FBE /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FBC4BC362AB636DE00635FBE /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		FBC4BC382AB64C0100635FBE /* DeliveryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItem.swift; sourceTree = "<group>"; };
+		FBC4BC3A2AB64FF700635FBE /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopView.swift; sourceTree = "<group>"; };
 		FD14C593AC13424CBD0F6C7B /* Pods-UltimateSolutionsTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltimateSolutionsTask.debug.xcconfig"; path = "Target Support Files/Pods-UltimateSolutionsTask/Pods-UltimateSolutionsTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				FBB579C62AB519A000B83AE2 /* CheckLoginModel.swift */,
+				FBC4BC262AB5C80500635FBE /* DeliveryItems.swift */,
+				FBC4BC282AB5C92800635FBE /* DeliveryStatus.swift */,
+				FBC4BC382AB64C0100635FBE /* DeliveryItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				FBB579C42AB5154800B83AE2 /* LoginViewModel.swift */,
+				FBC4BC342AB5F59B00635FBE /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				FBB579B42AB4EE4A00B83AE2 /* Login */,
+				FBC4BC3A2AB64FF700635FBE /* MainTopView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				FBB579B92AB4F1F200B83AE2 /* LoginController.swift */,
+				FBC4BC2A2AB5CD4D00635FBE /* MainController.swift */,
+				FBC4BC2C2AB5CD5B00635FBE /* NewDeliveryController.swift */,
+				FBC4BC2E2AB5CD6400635FBE /* OtherDeliveryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,9 +257,9 @@
 			children = (
 				FBB579BD2AB509A400B83AE2 /* AuthButton.swift */,
 				FBB579B72AB4EF3900B83AE2 /* Extension.swift */,
-				FBB579AD2AB4EC2400B83AE2 /* launch-.png */,
 				FBB579BF2AB50B5E00B83AE2 /* CustomTextField.swift */,
 				FBB579C82AB51D6000B83AE2 /* Constants.swift */,
+				FBB579AD2AB4EC2400B83AE2 /* launch-.png */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -245,7 +275,10 @@
 		FBB579C12AB514BB00B83AE2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				FBC4BC322AB5EF5A00635FBE /* Service.swift */,
 				FBB579C22AB514DE00B83AE2 /* AuthService.swift */,
+				FBC4BC302AB5DDE400635FBE /* UserDefaults.swift */,
+				FBC4BC362AB636DE00635FBE /* DatabaseService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -492,12 +525,23 @@
 				FBB579BE2AB509A400B83AE2 /* AuthButton.swift in Sources */,
 				FBB579B82AB4EF3900B83AE2 /* Extension.swift in Sources */,
 				FBB579BA2AB4F1F200B83AE2 /* LoginController.swift in Sources */,
+				FBC4BC272AB5C80500635FBE /* DeliveryItems.swift in Sources */,
 				FBB579C32AB514DE00B83AE2 /* AuthService.swift in Sources */,
 				FBB579C72AB519A000B83AE2 /* CheckLoginModel.swift in Sources */,
 				FBB579B62AB4EE6600B83AE2 /* CircleView.swift in Sources */,
+				FBC4BC292AB5C92800635FBE /* DeliveryStatus.swift in Sources */,
+				FBC4BC2F2AB5CD6400635FBE /* OtherDeliveryController.swift in Sources */,
+				FBC4BC2D2AB5CD5B00635FBE /* NewDeliveryController.swift in Sources */,
+				FBC4BC332AB5EF5A00635FBE /* Service.swift in Sources */,
+				FBC4BC2B2AB5CD4D00635FBE /* MainController.swift in Sources */,
 				FBB579822AB4E4D700B83AE2 /* ViewController.swift in Sources */,
 				FBB5797E2AB4E4D700B83AE2 /* AppDelegate.swift in Sources */,
 				FBB579802AB4E4D700B83AE2 /* SceneDelegate.swift in Sources */,
+				FBC4BC372AB636DE00635FBE /* DatabaseService.swift in Sources */,
+				FBC4BC392AB64C0100635FBE /* DeliveryItem.swift in Sources */,
+				FBC4BC352AB5F59B00635FBE /* MainViewModel.swift in Sources */,
+				FBC4BC312AB5DDE400635FBE /* UserDefaults.swift in Sources */,
+				FBC4BC3B2AB64FF700635FBE /* MainTopView.swift in Sources */,
 				FBB579C52AB5154800B83AE2 /* LoginViewModel.swift in Sources */,
 				FBB579C02AB50B5E00B83AE2 /* CustomTextField.swift in Sources */,
 				FBB579C92AB51D6000B83AE2 /* Constants.swift in Sources */,

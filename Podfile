@@ -9,7 +9,7 @@ target 'UltimateSolutionsTask' do
 
 	pod 'JGProgressHUD'
 	pod 'Alamofire'
-	
+	pod 'SQLite.swift', '~> 0.14.0'
 
   target 'UltimateSolutionsTaskTests' do
     inherit! :search_paths

@@ -7,21 +7,21 @@
 
 import Foundation
 
-struct CheckDeliveryLoginRequestValue: Encodable {
+struct CheckDeliveryLoginRequestValue: Codable {
     let P_LANG_NO: String
     let P_DLVRY_NO: String
     let P_PSSWRD: String
 }
 
-struct CheckDeliveryLoginRequest: Encodable {
+struct CheckDeliveryLoginRequest: Codable {
     let Value: CheckDeliveryLoginRequestValue
 }
 
-struct CheckDeliveryLoginResult: Decodable {
+struct CheckDeliveryLoginResult: Codable {
     let ErrMsg: String
     let ErrNo: Int
 }
 
-struct CheckDeliveryLoginResponse: Decodable {
+struct CheckDeliveryLoginResponse: Codable {
     let Result: CheckDeliveryLoginResult
 }
