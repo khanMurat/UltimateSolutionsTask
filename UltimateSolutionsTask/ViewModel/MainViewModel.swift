@@ -82,8 +82,6 @@ class MainViewModel{
         }
     }
 
-    
-    
     func prepareDataForDatabase(deliveryBills: [DeliveryBill], statusTypes: [DeliveryStatus]) -> [DeliveryItem] {
         var preparedData: [DeliveryItem] = []
         

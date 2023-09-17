@@ -12,6 +12,7 @@ class CircleView : UIView {
     
     //MARK: - Properties
     
+    var color : UIColor
     
     lazy var circleView : UIView = {
        
@@ -32,8 +33,8 @@ class CircleView : UIView {
         path.close()
         
         shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = UIColor.orange.cgColor
-        shapeLayer.strokeColor = UIColor.orange.cgColor
+        shapeLayer.fillColor = color.cgColor
+        shapeLayer.strokeColor = color.cgColor
         shapeLayer.lineWidth = 2
         
         view.layer.addSublayer(shapeLayer)
@@ -44,8 +45,9 @@ class CircleView : UIView {
     
     //MARK: - Lifecycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+     init(color:UIColor) {
+        self.color = color
+         super.init(frame: .zero)
         
         configureUI()
     }

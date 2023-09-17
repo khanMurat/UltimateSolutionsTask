@@ -20,6 +20,7 @@ struct Constants {
     
     struct Colors {
         static let darkBlueColor = UIColor(red: 32/255.0, green: 78/255.0, blue: 96/255.0, alpha: 1)
+        static let darkBrownyColor = UIColor(red: 195/255.0, green: 59/255.0, blue: 35/255.0, alpha: 1)
     }
-
+    
 }

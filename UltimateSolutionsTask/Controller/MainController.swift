@@ -14,6 +14,8 @@ class MainController : UIViewController{
     
     let viewModel = MainViewModel()
     
+    private let mainTopView = MainTopView()
+    
     private lazy var segmentedControl : UISegmentedControl = {
        
         let segmented = UISegmentedControl(items: ["New","Others"])
@@ -39,7 +41,7 @@ class MainController : UIViewController{
         
         configureUI()
 
-        viewModel.saveDataToDatabase()
+        saveDatabaseToApiDatas()
 
     }
     
@@ -53,9 +55,11 @@ class MainController : UIViewController{
         case 0 :
             newDeliveryController.view.isHidden = false
             otherDeliveryController.view.isHidden = true
+            newDeliveryController.collectionView.reloadData()
         case 1 :
             newDeliveryController.view.isHidden = true
             otherDeliveryController.view.isHidden = false
+            otherDeliveryController.collectionView.reloadData()
         default:
             break
         }
@@ -79,8 +83,17 @@ class MainController : UIViewController{
 
         otherDeliveryController.view.isHidden = true
         
+        view.addSubview(mainTopView)
+        mainTopView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 125)
+        
         view.addSubview(segmentedControl)
-        segmentedControl.centerX(inView: view,topAnchor: view.safeAreaLayoutGuide.topAnchor,paddingTop: 64)
+        segmentedControl.centerX(inView: view,topAnchor: mainTopView.bottomAnchor,paddingTop: 64)
+        segmentedControl.layer.cornerRadius = 20
+        segmentedControl.layer.masksToBounds = true
+    }
+    
+    func saveDatabaseToApiDatas(){
+        viewModel.saveDataToDatabase()
     }
     
     func setupChildController(){

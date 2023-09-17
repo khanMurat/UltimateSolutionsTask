@@ -39,6 +39,10 @@
 		FBC4BC372AB636DE00635FBE /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC362AB636DE00635FBE /* DatabaseService.swift */; };
 		FBC4BC392AB64C0100635FBE /* DeliveryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC382AB64C0100635FBE /* DeliveryItem.swift */; };
 		FBC4BC3B2AB64FF700635FBE /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC3A2AB64FF700635FBE /* MainTopView.swift */; };
+		FBC4BC3D2AB65A5900635FBE /* DeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC3C2AB65A5900635FBE /* DeliveryCell.swift */; };
+		FBC4BC3F2AB66C4200635FBE /* NewDeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4BC3E2AB66C4200635FBE /* NewDeliveryViewModel.swift */; };
+		FBE0AE0B2AB715DA00518042 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0AE0A2AB715DA00518042 /* Enum.swift */; };
+		FBE0AE0D2AB73EFE00518042 /* OtherDeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE0AE0C2AB73EFE00518042 /* OtherDeliveryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		FBC4BC362AB636DE00635FBE /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		FBC4BC382AB64C0100635FBE /* DeliveryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItem.swift; sourceTree = "<group>"; };
 		FBC4BC3A2AB64FF700635FBE /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopView.swift; sourceTree = "<group>"; };
+		FBC4BC3C2AB65A5900635FBE /* DeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCell.swift; sourceTree = "<group>"; };
+		FBC4BC3E2AB66C4200635FBE /* NewDeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeliveryViewModel.swift; sourceTree = "<group>"; };
+		FBE0AE0A2AB715DA00518042 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		FBE0AE0C2AB73EFE00518042 /* OtherDeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDeliveryViewModel.swift; sourceTree = "<group>"; };
 		FD14C593AC13424CBD0F6C7B /* Pods-UltimateSolutionsTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltimateSolutionsTask.debug.xcconfig"; path = "Target Support Files/Pods-UltimateSolutionsTask/Pods-UltimateSolutionsTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +236,8 @@
 			children = (
 				FBB579C42AB5154800B83AE2 /* LoginViewModel.swift */,
 				FBC4BC342AB5F59B00635FBE /* MainViewModel.swift */,
+				FBC4BC3E2AB66C4200635FBE /* NewDeliveryViewModel.swift */,
+				FBE0AE0C2AB73EFE00518042 /* OtherDeliveryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,6 +247,7 @@
 			children = (
 				FBB579B42AB4EE4A00B83AE2 /* Login */,
 				FBC4BC3A2AB64FF700635FBE /* MainTopView.swift */,
+				FBC4BC3C2AB65A5900635FBE /* DeliveryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +271,7 @@
 				FBB579BF2AB50B5E00B83AE2 /* CustomTextField.swift */,
 				FBB579C82AB51D6000B83AE2 /* Constants.swift */,
 				FBB579AD2AB4EC2400B83AE2 /* launch-.png */,
+				FBE0AE0A2AB715DA00518042 /* Enum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -531,15 +543,19 @@
 				FBB579B62AB4EE6600B83AE2 /* CircleView.swift in Sources */,
 				FBC4BC292AB5C92800635FBE /* DeliveryStatus.swift in Sources */,
 				FBC4BC2F2AB5CD6400635FBE /* OtherDeliveryController.swift in Sources */,
+				FBC4BC3D2AB65A5900635FBE /* DeliveryCell.swift in Sources */,
 				FBC4BC2D2AB5CD5B00635FBE /* NewDeliveryController.swift in Sources */,
 				FBC4BC332AB5EF5A00635FBE /* Service.swift in Sources */,
 				FBC4BC2B2AB5CD4D00635FBE /* MainController.swift in Sources */,
+				FBC4BC3F2AB66C4200635FBE /* NewDeliveryViewModel.swift in Sources */,
+				FBE0AE0D2AB73EFE00518042 /* OtherDeliveryViewModel.swift in Sources */,
 				FBB579822AB4E4D700B83AE2 /* ViewController.swift in Sources */,
 				FBB5797E2AB4E4D700B83AE2 /* AppDelegate.swift in Sources */,
 				FBB579802AB4E4D700B83AE2 /* SceneDelegate.swift in Sources */,
 				FBC4BC372AB636DE00635FBE /* DatabaseService.swift in Sources */,
 				FBC4BC392AB64C0100635FBE /* DeliveryItem.swift in Sources */,
 				FBC4BC352AB5F59B00635FBE /* MainViewModel.swift in Sources */,
+				FBE0AE0B2AB715DA00518042 /* Enum.swift in Sources */,
 				FBC4BC312AB5DDE400635FBE /* UserDefaults.swift in Sources */,
 				FBC4BC3B2AB64FF700635FBE /* MainTopView.swift in Sources */,
 				FBB579C52AB5154800B83AE2 /* LoginViewModel.swift in Sources */,

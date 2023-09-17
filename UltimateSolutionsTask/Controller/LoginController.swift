@@ -15,7 +15,7 @@ class LoginController : UIViewController {
     
     var viewModel = LoginViewModel()
     
-    let circleView = CircleView()
+    let circleView = CircleView(color: Constants.Colors.darkBrownyColor)
     
     let brandView : UIImageView = {
        let bv = UIImageView()
