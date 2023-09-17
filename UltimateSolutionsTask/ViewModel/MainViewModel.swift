@@ -46,7 +46,7 @@ class MainViewModel{
             }
         }
         
-        func saveDataToDatabase(){
+    func saveDataToDatabase(completion:@escaping (Error?)->Void){
             let dbFileName = "myAppDB.sqlite3"
             guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
                 print("error when access document file")
@@ -56,10 +56,16 @@ class MainViewModel{
             
             let databaseService = DatabaseService(databasePath: dbPath)
             
-            fetchAndPrepareDataForDatabase(databaseService: databaseService)
+        fetchAndPrepareDataForDatabase(databaseService: databaseService) { error in
+            if error != nil{
+                completion(error)
+            }else{
+                completion(nil)
+            }
         }
+    }
         
-    func fetchAndPrepareDataForDatabase(databaseService: DatabaseService) {
+    func fetchAndPrepareDataForDatabase(databaseService: DatabaseService,completion:@escaping (Error?)->Void) {
         getDeliveryBillItems { [weak self] deliveryBills in
             guard let self = self else { return }
             guard let bills = deliveryBills else { return }
@@ -74,8 +80,10 @@ class MainViewModel{
                 for item in preparedData {
                     do {
                         try databaseService.saveOrUpdateDeliveryItem(item: item)
+                        completion(nil)
                     } catch {
                         print("Error happened when try saving to database: \(error)")
+                        completion(error)
                     }
                 }
             }

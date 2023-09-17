@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class MainController : UIViewController{
     
     //MARK: - Properties
@@ -40,11 +39,10 @@ class MainController : UIViewController{
         super.viewDidLoad()
         
         configureUI()
-
+        
         saveDatabaseToApiDatas()
-
+        
     }
-    
     
     //MARK: - Actions
     
@@ -55,11 +53,10 @@ class MainController : UIViewController{
         case 0 :
             newDeliveryController.view.isHidden = false
             otherDeliveryController.view.isHidden = true
-            newDeliveryController.collectionView.reloadData()
+            
         case 1 :
             newDeliveryController.view.isHidden = true
             otherDeliveryController.view.isHidden = false
-            otherDeliveryController.collectionView.reloadData()
         default:
             break
         }
@@ -80,7 +77,6 @@ class MainController : UIViewController{
         view.addSubview(otherDeliveryController.view)
         otherDeliveryController.view.frame = self.view.bounds
         otherDeliveryController.didMove(toParent: self)
-
         otherDeliveryController.view.isHidden = true
         
         view.addSubview(mainTopView)
@@ -90,10 +86,17 @@ class MainController : UIViewController{
         segmentedControl.centerX(inView: view,topAnchor: mainTopView.bottomAnchor,paddingTop: 64)
         segmentedControl.layer.cornerRadius = 20
         segmentedControl.layer.masksToBounds = true
+        
     }
     
     func saveDatabaseToApiDatas(){
-        viewModel.saveDataToDatabase()
+        viewModel.saveDataToDatabase { error in
+            if error != nil{
+                print("Error : \(error?.localizedDescription ?? "")")
+            }else{
+                NotificationCenter.default.post(name: .didSaveDataToDatabase, object: nil)
+            }
+        }
     }
     
     func setupChildController(){

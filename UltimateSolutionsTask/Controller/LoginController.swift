@@ -30,12 +30,14 @@ class LoginController : UIViewController {
         lbl.text = "Welcome Back!"
         lbl.textAlignment = .center
         lbl.font = .boldSystemFont(ofSize: 28)
+        lbl.textColor = Constants.Colors.darkBlueColor
         return lbl
     }()
     
     let descriptionLabel : UILabel = {
        let lbl = UILabel()
         lbl.text = "Log back into your account"
+        lbl.textColor = Constants.Colors.darkBlueColor
         lbl.textAlignment = .center
 
         lbl.font = .systemFont(ofSize: 12)
@@ -89,6 +91,8 @@ class LoginController : UIViewController {
         guard let userId = userIDTextField.text else{return}
         guard let password = passwordTextField.text else{return}
         
+        self.showLoader(true)
+        
         viewModel.loginUser(userID: userId, password: password,languageCode: "2") { response in
             
             if let response = response {
@@ -102,9 +106,11 @@ class LoginController : UIViewController {
                     let nav = UINavigationController(rootViewController: controller)
                     nav.modalPresentationStyle = .fullScreen
                     self.present(nav, animated: true)
+                    self.showLoader(false)
                 }
                 else{
                     self.showMessage(withTitle: "ERROR", message: response.Result.ErrMsg )
+                    self.showLoader(false)
                 }
             }
         }

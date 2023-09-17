@@ -36,6 +36,10 @@ extension UIViewController {
     }
 }
 
+extension Notification.Name {
+    static let didSaveDataToDatabase = Notification.Name("didSaveDataToDatabase")
+}
+
 extension UIButton {
     func attributedTitle(firstPart: String, secondPart: String) {
         let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 16)]

@@ -21,26 +21,32 @@ class DatabaseService {
     }
     
     //MARK: - Helpers
-
+    
     func setupDatabase() {
-            let deliveryItems = Table("DeliveryItems")
-            let billSrl = Expression<String>("BILL_SRL")
-            let billAmt = Expression<String>("BILL_AMT")
-            let billDate = Expression<String>("BILL_DATE")
-            let dlvryStatus = Expression<String>("DLVRY_STATUS")
-            
-            if (try? db.scalar(deliveryItems.exists)) ?? false {
-                 print("Table already exists.")
-                 return
-             }
+             let deliveryItems = Table("DeliveryItems")
+             let billSrl = Expression<String>("BILL_SRL")
+             let billAmt = Expression<String>("BILL_AMT")
+             let billDate = Expression<String>("BILL_DATE")
+             let dlvryStatus = Expression<String>("DLVRY_STATUS")
+             
+        do {
+              let existingTables = try db.scalar("SELECT name FROM sqlite_master WHERE type='table' AND name='DeliveryItems'")
+              if existingTables != nil {
+                  print("Table already exists.")
+                  return
+              }
+          } catch {
+              print("Error checking for existing table: \(error)")
+          }
 
-            try! db.run(deliveryItems.create { t in
-                t.column(billSrl, unique: true)
-                t.column(billAmt)
-                t.column(billDate)
-                t.column(dlvryStatus)
-            })
-        }
+             try! db.run(deliveryItems.create { t in
+                 t.column(billSrl, unique: true)
+                 t.column(billAmt)
+                 t.column(billDate)
+                 t.column(dlvryStatus)
+             })
+         }
+
 
     func prepareDataForDatabase(deliveryBills: [DeliveryBill], statusTypes: [DeliveryStatus]) -> [(String, String, String)] {
         var preparedData: [(String, String, String)] = []
@@ -86,30 +92,6 @@ class DatabaseService {
         }
     }
 
-    
-//    func saveOrUpdateDeliveryItem(item: DeliveryItem) {
-//        let deliveryItems = Table("DeliveryItems")
-//        let billSrlColumn = Expression<String>("BILL_SRL")
-//        let billAmt = Expression<String>("BILL_AMT")
-//        let billDate = Expression<String>("BILL_DATE")
-//        let dlvryStatus = Expression<String>("DLVRY_STATUS")
-//
-//        let currentRow = deliveryItems.filter(billSrlColumn == item.billSrl)
-//
-//        if let _ = try? db.pluck(currentRow) {
-//            let update = currentRow.update([
-//                billAmt <- item.billAmt,
-//                billDate <- item.billDate,
-//                dlvryStatus <- item.dlvryStatus
-//            ])
-//            try! db.run(update)
-//        } else {
-//            let insert = deliveryItems.insert(billSrlColumn <- item.billSrl, billAmt <- item.billAmt, billDate <- item.billDate, dlvryStatus <- item.dlvryStatus)
-//            try! db.run(insert)
-//        }
-//    }
-
-
     func fetchFilteredDeliveryItems(status: String) -> [DeliveryItem] {
         let deliveryItems = Table("DeliveryItems")
         let billSrl = Expression<String>("BILL_SRL")
@@ -120,15 +102,20 @@ class DatabaseService {
         let query = deliveryItems.filter(dlvryStatus != status)
         
         var results: [DeliveryItem] = []
-        for item in try! db.prepare(query) {
-            let deliveryItem = DeliveryItem(
-                billSrl: item[billSrl],
-                billAmt: item[billAmt],
-                billDate: item[billDate],
-                dlvryStatus: item[dlvryStatus]
-            )
-            results.append(deliveryItem)
+        do {
+            for item in try db.prepare(query) {
+                let deliveryItem = DeliveryItem(
+                    billSrl: item[billSrl],
+                    billAmt: item[billAmt],
+                    billDate: item[billDate],
+                    dlvryStatus: item[dlvryStatus]
+                )
+                results.append(deliveryItem)
+            }
+        } catch {
+            print("Database error: \(error)")
         }
+
 
         return results
     }
@@ -143,14 +130,18 @@ class DatabaseService {
         let query = deliveryItems.filter(dlvryStatus == status)
         
         var results: [DeliveryItem] = []
-        for item in try! db.prepare(query) {
-            let deliveryItem = DeliveryItem(
-                billSrl: item[billSrl],
-                billAmt: item[billAmt],
-                billDate: item[billDate],
-                dlvryStatus: item[dlvryStatus]
-            )
-            results.append(deliveryItem)
+        do {
+            for item in try db.prepare(query) {
+                let deliveryItem = DeliveryItem(
+                    billSrl: item[billSrl],
+                    billAmt: item[billAmt],
+                    billDate: item[billDate],
+                    dlvryStatus: item[dlvryStatus]
+                )
+                results.append(deliveryItem)
+            }
+        } catch {
+            print("Database error: \(error)")
         }
 
         return results

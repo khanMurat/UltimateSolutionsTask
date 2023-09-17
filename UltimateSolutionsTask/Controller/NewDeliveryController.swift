@@ -7,15 +7,23 @@
 
 import UIKit
 
+
+
 let cellIdentifier = "DeliveryCell"
 
 class NewDeliveryController : UIViewController{
     
     //MARK: - Properties
     
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
-    var viewModel : NewDeliveryViewModel!
+    private var viewModel : NewDeliveryViewModel!
+    
+    private var deliveryList = [DeliveryItem](){
+        didSet{
+            self.collectionView.reloadData()
+        }
+    }
     
     //MARK: - Lifecycle
     
@@ -25,8 +33,19 @@ class NewDeliveryController : UIViewController{
         configureCollectionView()
         
         viewModel = NewDeliveryViewModel()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleGetItemsFromDatabase), name: .didSaveDataToDatabase, object: nil)
+    
+    }
+    
+    //MARK: - Actions
+    
+    @objc func handleGetItemsFromDatabase(){
         viewModel.fetchDeliveries {
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.deliveryList = self.viewModel.deliveries
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -48,13 +67,13 @@ class NewDeliveryController : UIViewController{
 
 extension NewDeliveryController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.deliveries.count
+        return deliveryList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DeliveryCell
         
-        let delivery = viewModel.deliveries[indexPath.row]
+        let delivery = deliveryList[indexPath.row]
         
         cell.viewModel = NewDeliveryViewModel(model: delivery)
         
@@ -80,4 +99,5 @@ extension NewDeliveryController : UICollectionViewDelegateFlowLayout{
         return CGSize(width: width, height: 100)
     }
     
-}
+    }
+

@@ -14,11 +14,11 @@ class OtherDeliveryController : UIViewController{
     
     //MARK: - Properties
     
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
-    var viewModel : OtherDeliveryViewModel!
+    private var viewModel : OtherDeliveryViewModel!
     
-    var deliveryList = [DeliveryItem](){
+    private var deliveryList = [DeliveryItem](){
         didSet{
             self.collectionView.reloadData()
         }
@@ -33,7 +33,13 @@ class OtherDeliveryController : UIViewController{
         
         viewModel = OtherDeliveryViewModel()
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleGetItemsFromDatabase), name: .didSaveDataToDatabase, object: nil)
+
+    }
+    
+    //MARK: - Actions
+    
+    @objc func handleGetItemsFromDatabase(){
         viewModel.fetchDeliveries {
             DispatchQueue.main.async {
                 self.deliveryList = self.viewModel.deliveries
