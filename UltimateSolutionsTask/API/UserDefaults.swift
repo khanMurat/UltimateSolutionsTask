@@ -31,4 +31,12 @@ struct UserDefaultsService{
         return UserDefaults.standard.string(forKey: "P_LANG_NO")
     }
     
+    static func saveUserName(DeliveryName:String){
+        UserDefaults.standard.set(DeliveryName, forKey: "DeliveryName")
+    }
+    
+    static func getUserName()->String?{
+        return UserDefaults.standard.string(forKey: "DeliveryName")
+    }
+    
 }

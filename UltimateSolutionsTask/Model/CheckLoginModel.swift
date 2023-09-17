@@ -24,4 +24,9 @@ struct CheckDeliveryLoginResult: Codable {
 
 struct CheckDeliveryLoginResponse: Codable {
     let Result: CheckDeliveryLoginResult
+    let Data : DataName
+}
+
+struct DataName : Codable{
+    let DeliveryName : String
 }

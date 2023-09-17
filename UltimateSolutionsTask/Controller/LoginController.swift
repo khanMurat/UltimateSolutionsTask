@@ -101,6 +101,7 @@ class LoginController : UIViewController {
                     
                     UserDefaultsService.saveUserId(P_DLVRY_NO: userId)
                     UserDefaultsService.saveLanguageCode(P_LANG_NO: "2")
+                    UserDefaultsService.saveUserName(DeliveryName: response.Data.DeliveryName)
                     
                     let controller = MainController()
                     let nav = UINavigationController(rootViewController: controller)
