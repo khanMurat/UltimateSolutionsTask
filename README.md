@@ -14,3 +14,5 @@ MVVM Design Pattern
 You can find the YouTube video of the application below.
 
 https://youtube.com/shorts/llE2vewMOqc?feature=share
+
+![:](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWgzZTAzaDZrNHBkc3kzcnJwY2EycnA3d25lM2F5dXh0djV5Mm10eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NLcx67PI7zXSrGmU8L/giphy.gif)
